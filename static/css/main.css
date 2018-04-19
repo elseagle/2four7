@@ -1,0 +1,33 @@
+.content
+{
+    padding: 0px 20px;
+}
+.bill
+{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+}
+.rows
+{
+    color:gray;
+    font-size: 18px;
+}
+.but
+{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5%;  
+    box-shadow: dimgray 2px;
+}
+.space
+{
+    padding-left: 10px;
+}
+.red
+{
+    color: red;
+}
+a.active {
+    color: #fff !important;
+}

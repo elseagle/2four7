@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="../static/img/logo.png">
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/profile.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>For Demo Only</title>
+</head>
+<body>
+	<div id="profile-navs" class="fixed-top">
+		<div id="nava">
+			<span><a href="{{ url_for("index") }}"><img src="../static/img/logo.png"></a></span>
+			<big ><a href="href="{{ url_for("index") }}"">HUB 2FOUR7</a></big>
+		</div>
+		<div id="navb">
+			<div class="dropdown">
+				<a class="btn dropdown-toggle" type="button" href="#" data-toggle="dropdown">
+					<img src="../static/img/mine.png" width="25" height="25">
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li class="dropdown-header css-truncate">
+						Signed in as<br>
+						<strong class="display-name css-truncate-target">
+                            {% if email %}
+                                {{ email }}
+                            {% endif %}
+                        </strong>
+					</li>
+					<li class="dropdown-divider"></li>
+					<li class="dropdown-item"><a href="{{ urls['url_settings'] }}"><small>New subscription</small></a></li>
+					<li class="dropdown-item"><a href="{{ urls['url_settings'] }}"><small>Edit profile</small></a></li>
+					<li class="dropdown-divider"></li>
+					<li class="dropdown-item"><a href="#"><small>Report a problem</small></a></li>
+					<li class="dropdown-item"><a href="{{ urls['url_settings'] }}"><small>Settings</small></a></li>
+					<li class="dropdown-item"><a href="#"><small>Log out</small></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="contents" class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 col-sm-12 order-md-2">
+				<div class="card">
+					<span class="card-header">Teams you belong to</span>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item"><small>Cras justo odio</small></li>
+						<li class="list-group-item"><small>Lorem ipsum</small></li>
+						<li class="list-group-item"><small>Fed_Gov_Auditors</small></li>
+					</ul>
+				</div>
+				<div class="card">
+					<span class="card-header">Your Subscriptions</span>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item"><small>My office plan <code style="color: green;">active</code></small></li>
+						<li class="list-group-item"><small>Study plan <code style="color: green;">active</code></small></li>
+						<li class="list-group-item"><small>Team404 plan <code>inactive</code></small></li>
+						<li class="list-group-item"><small>N-Power work plan <code style="color: rgba(1,1,1,.4);">exhausted</code></small></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-8 col-sm-12 order-md-1">
+				<div class="card" style="border: none;">
+					<div class="card-header bg-transparent">
+						<ul class="nav nav-tabs card-header-tabs">
+							<li class="nav-item">
+								<a href="{{ urls['url_me'] }}" class="nav-link">Notifications</a>
+							</li>
+							<li class="nav-item">
+								<a href="{{ urls['url_request'] }}" class="nav-link">Requests</a>
+							</li>
+
+							<li class="nav-item">
+								<a href="{{ urls['demo'] }}" class="nav-link">Files</a>
+							</li>
+
+							<li class="nav-item">
+								<a href="{{ urls['demo'] }}" class="nav-link">Discuss</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div>Just for Demo</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+	</div>
+	<script type="text/javascript" src="../static/js/jquery-slim.min.js"></script>
+	<script type="text/javascript" src="../static/js/popper.min.js"></script>
+	<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../static/js/tweaks.js"></script>
+</body>
+</html>

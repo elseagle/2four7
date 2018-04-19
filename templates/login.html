@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="../static/img/logo.png">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/tweaks.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+    <title>Sign In</title>
+</head>
+<body>
+<div>
+    <nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
+        <span><img src="../static/img/logo.png"></span>
+        <a class="navbar-brand mr-auto" href="#">2-four-7</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navToggler"
+                aria-controls="navToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navToggler">
+            <ul class="navbar-nav" id="nav-clicks">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ urls['url_index'] }}#get-started">Get started <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+						<a class="nav-link" href="{{ url_for("user_dashboard") }}">My profile</a>
+					</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ urls['url_index'] }}#users-comment">Users' Comments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ urls['url_index'] }}#settings">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ urls['url_index'] }}#go-get-it">Get it now!</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-md-6" style="margin: auto;">
+        <form class="form-signin" method="POST" action="{{ url_for("login") }}">
+            <div class="text-center mb-4">
+                <img class="mb-4" src="../static/img/logo.png" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                <small class="text-muted">Identify yourself with Us!</small>
+            </div>
+            {% if login_first %}
+                <div class="alert alert-danger">
+                    {{ login_first }}
+                </div>
+            {% endif %}
+            {% if not_login %}
+                <div class="alert alert-danger">
+                    {{ not_login }}
+                </div>
+            {% endif %}
+            {% if not_exist %}
+                <div class="alert alert-danger">
+                    {{ not_exist }}
+                </div>
+            {% endif %}
+            {% if logged_in %}
+                <div class="alert alert-danger">
+                    {{ logged_in }}
+                </div>
+            {% endif %}
+            <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus>
+                <label for="inputEmail">Email address</label>
+            </div>
+            <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password"  name="password" required>
+                <label for="inputPassword">Password</label>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-center">New HUB 2FOUR7? <a class="toggleVisibility" href="#"> Sign Up</a> now
+            </p>
+            <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+        </form>
+
+        <form class="form-signup no-display" action="{{ url_for("signup") }}" method="POST">
+            <div class="text-center mb-4">
+                <img class="mb-4" src="../static/img/logo.png" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+                <small class="text-muted">Identify yourself with Us!</small>
+            </div>
+            {% if msg %}
+                <div class="alert alert-info" role="alert">
+                    {{ msg }}
+                </div>
+            {% endif %}
+            {% if email_exists %}
+                <div class="alert alert-danger" role="alert">
+                    {{ email_exists }}
+                </div>
+            {% endif %}
+            {% if existing_user %}
+                <div class="alert alert-danger" role="alert">
+                    {{ existing_user }}
+                </div>
+            {% endif %}
+            {% if not_match %}
+                <div class="alert alert-danger" role="alert">
+                    {{ not_match }}
+                </div>
+            {% endif %}
+            <div class="form-label-group">
+                <input type="text" id="submitFullName" class="form-control" placeholder="Full name" name="full_name"
+                       required autofocus>
+                <label for="submitFullName">Full name</label>
+            </div>
+            <div class="form-label-group">
+                <input type="email" id="submitEmail" class="form-control" placeholder="Email address" name="email"
+                       required>
+                <label for="submitEmail">Email address</label>
+            </div>
+            <div class="form-label-group">
+                <input type="password" id="submitPassword" class="form-control" placeholder="Password" name="password"
+                       required>
+                <label for="submitPassword">Password</label>
+            </div>
+            <div class="form-label-group">
+                <input type="password" id="repeatPassword" class="form-control" placeholder="Repeat password"
+                       name="confirm" required>
+                <label for="repeatPassword">Repeat password</label>
+            </div>
+            <div class="checkbox mb-3">
+                <small class="text-muted">By clicking "Sign Up", you are agreeing to our <a href="#">terms and
+                    conditions</a></small>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+            <p class="mt-5 mb-3 text-center">Not new to 2-four-7 Hub? <a class="toggleVisibility" href="#"> Sign In</a>
+                now</p>
+            <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="../static/js/jquery-slim.min.js"></script>
+<script type="text/javascript" src="../static/js/popper.min.js"></script>
+<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../static/js/login-validation.js"></script>
+</body>
+</html>
