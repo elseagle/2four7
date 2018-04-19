@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, render_template, url_for, session,redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import Form
@@ -6,7 +7,7 @@ from wtforms.validators import InputRequired, Email
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://oluwasogo:ogundowole@localhost/hub2four7'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'some_random_key'
 
