@@ -11,8 +11,8 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="0">
 	<div>
 		<nav class="navbar navbar-expand-sm navbar-light bg-light">
-			<span><a href="{{ url_for("index") }}"><img src="../static/img/logo.png"></a></span>
-			<a href=" {{ url_for("index") }}" class="navbar-brand mr-auto">HUB 2FOUR7</a>
+			<span><a href="{{ url_for('index') }}"><img src="../static/img/logo.png"></a></span>
+			<a href=" {{ url_for('index') }}" class="navbar-brand mr-auto">Hub 2-four-7</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navToggler" aria-controls="navToggler" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -21,17 +21,14 @@
 					<li class="nav-item active">
 						<a class="nav-link" href="#get-started">Get started <span class="sr-only">(current)</span></a>
 					</li>
-                    <li class="nav-item ">
-						<a class="nav-link" href="{{ url_for("user_dashboard") }}">My profile</a>
-					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#users-plans">Users' Plans</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#users-comment">Users' Comments</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#go-get-it">Get it now!</a>
+                    <li class="nav-item ">
+						<a class="nav-link" href="{{ url_for('user_dashboard') }}">My profile</a>
 					</li>
 				</ul>
 			</div>
@@ -46,30 +43,13 @@
 		</ol>
 		<div class="carousel-inner" role="listbox">
 			<div class="carousel-item active">
-				<img src="../static/img/regular.jpeg" alt="Regular">
-				<div class="container">
-					<div class="carousel-caption">
-						<h1>Student package</h1>
-						<p>Are you a student faced with difficulties reading due to erratic
-                            electricity supply or you lack access to educative online materials
-                            because of your slow internet? This is the plan for you. With this plan,
-                            get 247 access to stable electricity and super fast in an environment best
-                            suited for you
-                        </p>
-						<p>
-							<a class="btn btn-lg btn-primary" href="{{ urls['url_login'] }}" role="button">Sign Up now!</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="carousel-item">
 				<img src="../static/img/students.jpg" alt="Students">
 				<div class="container">
 					<div class="carousel-caption">
-						<h1>Regular Package</h1>
-						<p>Access to the student package as well as access to confidentiality
-                        and a room wih bigger space and a bigger desk with a shelf to yourself for storage
-                        </p>
+						<h1>This is <big>Hub 2-four-7</big></h1>
+						<p>With our plan best suited for students, you now get 247 access to stable electricity
+							and super fast internet for your educative online materials
+						</p>
 						<p>
 							<a class="btn btn-lg btn-primary" href="{{ urls['url_login'] }}" role="button">Sign Up now!</a>
 						</p>
@@ -77,12 +57,13 @@
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img src="../static/img/team.jpg" alt="Teams">
+				<img src="../static/img/regular.jpeg" alt="Regular">
 				<div class="container">
 					<div class="carousel-caption">
-						<h1>Premium Plan</h1>
-						<p> Access to the the regular plan as well as a printer, a document rack, a lot
-                            more confidentiality and of course a bigger desk</p>
+						<h1>This is <big>Hub 2-four-7</big></h1>
+						<p>
+							With our plan for regular users, you get to work in our hub that provides some level of confidentiality and more space.
+						</p>
 						<p>
 							<a class="btn btn-lg btn-primary" href="{{ urls['url_login'] }}" role="button">Sign Up now!</a>
 						</p>
@@ -93,11 +74,23 @@
 				<img src="../static/img/premium.jpeg" alt="Premium">
 				<div class="container">
 					<div class="carousel-caption">
-						<h1>Team / Collaborators plan</h1>
-						<p>Access to the premium plan as well as a cabin for you and your team as well as acces to
-                        a board room(on request), a lot more confidentiality compare to the premium plan as well as
-                        a bigger desk for you and your team mates</p>
+						<h1>This is <big>Hub 2-four-7</big></h1>
 						<p>
+							With our plan for premium users, you get to work in an office-like environment that gives more space and confidentiality with access to some office materials
+						</p>
+							<a class="btn btn-lg btn-primary" href="{{ urls['url_login'] }}" role="button">Sign Up now!</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="../static/img/team.jpg" alt="Teams">
+				<div class="container">
+					<div class="carousel-caption">
+						<h1>This is <big>Hub 2-four-7</big></h1>
+						<p>
+							Now, your team can work without intrusion in a real and spacious office environment with access to a board room for your official activities
+						</p>
 							<a class="btn btn-lg btn-primary" href="{{ urls['url_login'] }}" role="button">Sign Up now!</a>
 						</p>
 					</div>
@@ -126,8 +119,8 @@
 			<div class="container-fluid">
 				<div class="row white-layout">
 					<div class="col-md-6 col-sm-12 text-left order-md-2">
-						<h2>Empowering Students' Developers and Innovators</h2>
-						<p>Our hubs nationwide provides students with the necessities for developing, as well as a conducive workspace for working.</p>
+						<h2>Empowering Student Developers and Innovators</h2>
+						<p>Our hubs are inclined towards providing students with the necessities for developing, as well as a conducive workspace for working.</p>
 					</div>
 					<div class="col-md-6 col-sm-12 text-center order-md-1">
 						<img src="../static/img/web-design.png">
@@ -135,8 +128,8 @@
 				</div>
 				<div class="row blue-layout">
 					<div class="col-md-6 col-sm-12 text-left">
-						<h2>STANDBY INTERNET TO ENABLE SEAMLESS OPERATIONS</h2>
-						<p>Fast and Reliable Internet Connection. With several internet infrastructures in place; 3GBps Fiber Internet, we provides you with a robust networking infrastructure and access to Wi-Fi in all our hubs.</p>
+						<h2>Standby Internet To Enable Seamless Operation</h2>
+						<p>Fast and reliable internet connection. With several internet infrastructures in place, we provide you with a robust networking infrastructure and access to Wi-Fi in all our hubs.</p>
 					</div>
 					<div class="col-md-6 col-sm-12 text-center">
 						<img src="../static/img/web-design.png">
@@ -172,7 +165,7 @@
 								</div>
 								<div class="x-feature-box-content">
 									<h4 class="x-feature-box-title" style="color: #ffffff;">Students' Plan</h4>
-									<p class="x-feature-box-text">Hub 2-four-7 provides students with a plan that provides just what they need .</p>
+									<p class="x-feature-box-text">Hub 2-four-7 give students a plan that provides just what they need for facilitative innovation and personal development.</p>
 								</div>
 							</div>
 						</div>
@@ -202,7 +195,7 @@
 								</div>
 								<div class="x-feature-box-content">
 									<h4 class="x-feature-box-title" style="color: #ffffff;">Collaborators' Plan</h4>
-									<p class="x-feature-box-text">Combine our super fast internet connection with your power-team and get your work done in a way you want. Enjoy access to a board room, a cabin that provides confidentiality for your team, and lots more</p>
+									<p class="x-feature-box-text">Combine our super fast internet connection with your power-team and get your work done in a way you want. Enjoy access to a board room, a cabin that provides confidentiality for your team, and lots more!</p>
 								</div>
 							</div>
 						</div>
@@ -226,7 +219,7 @@
 							<div class="card-body">
 								<h5 class="card-title">Ben Kentley</h5>
 								<small class="text-muted">Account auditor</small>
-								<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+								<p class="card-text">This comments section is put up just for demonstration. The platform is still under construction</p>
 							</div>
 							<div class="card-footer">
 								<small class="text-muted">Comment: 3 mins ago</small>
@@ -237,7 +230,7 @@
 							<div class="card-body">
 								<h5 class="card-title">Richard Koeman</h5>
 								<small class="text-muted">Software developer</small>
-								<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+								<p class="card-text">This comments section is put up just for demonstration. The platform is still under construction</p>
 							</div>
 							<div class="card-footer">
 								<small class="text-muted">Comment: 16 mins ago</small>
@@ -248,7 +241,7 @@
 							<div class="card-body">
 								<h5 class="card-title">Eri Dot Eggbuns</h5>
 								<small class="text-muted">Flask learner</small>
-								<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+								<p class="card-text">This comments section is put up just for demonstration. The platform is still under construction</p>
 							</div>
 							<div class="card-footer">
 								<small class="text-muted">Comment: 2 hours ago</small>

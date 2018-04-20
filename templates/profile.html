@@ -6,13 +6,13 @@
     <link rel="stylesheet" type="text/css" href="../static/css/profile.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notifications - My profile</title>
+    <title>Notifications | Hub 2-four-7</title>
 </head>
 <body>
 <div id="profile-navs" class="fixed-top">
     <div id="nava">
-        <span><a href="{{ url_for("index") }}"><img src="../static/img/logo.png"></a></span>
-        <big><a href="{{ url_for("index") }}">HUB 2FOUR7</a></big>
+        <span><a href="{{ url_for('index') }}"><img src="../static/img/logo.png"></a></span>
+        <big><a href="{{ url_for('index') }}">Hub 2-four-7</a></big>
     </div>
     <div id="navb">
         <div class="dropdown">
@@ -44,7 +44,7 @@
                 <li class="dropdown-item"><a href="{{ urls['url_profile'] }}">
                     <small>Settings</small>
                 </a></li>
-                <li class="dropdown-item"><a href="{{ url_for("logout") }}">
+                <li class="dropdown-item"><a href="{{ url_for('logout') }}">
                     <small>Log out</small>
                 </a></li>
             </ul>
@@ -114,7 +114,7 @@
                 <div class="card-body">
                     <img src="../static/img/thumbnail.png" width="25" height="25">
                     <div class="card-inner">
-                        <p class="card-text">@team_mate1 added you to project #ForensicAudit.</p>
+                        <p class="card-text">@team_mate1 added you to project <a href="#">#ForensicAudit</a>.</p>
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Forensic Auditing</h5>
@@ -130,7 +130,7 @@
                 <div class="card-body">
                     <img src="../static/img/thumbnail.png" width="25" height="25">
                     <div class="card-inner">
-                        <p class="card-text">You added @team_mate9 to your Team Fed_Gov_Auditors</p>
+                        <p class="card-text">You added @team_mate9 to your <a href="#">Team Fed_Gov_Auditors</a></p>
                     </div>
                     <small>on Mar-27</small>
                 </div>

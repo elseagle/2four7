@@ -6,16 +6,15 @@
 	<link rel="stylesheet" type="text/css" href="../static/css/profile.css">
 	<link rel="stylesheet" href="../static/css/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../static/css/main.css">
-
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Subscribe - My profile</title>
+	<title>Subscribe | Hub 2-four-7</title>
 </head>
 <body>
 	<div id="profile-navs" class="fixed-top">
 		<div id="nava">
-			<span><img src="../static/img/logo.png"></span>
-			<big href="#">HUB 2FOUR7</big>
+			<span><a href="{{ url_for('index') }}"><img src="../static/img/logo.png"></a></span>
+			<big ><a href="{{ url_for('index') }}">Hub 2-four-7</a></big>
 		</div>
 		<div id="navb">
 			<div class="dropdown">
@@ -26,7 +25,11 @@
 				<ul class="dropdown-menu">
 					<li class="dropdown-header css-truncate">
 						Signed in as<br>
-						<strong class="display-name css-truncate-target">@elseagle</strong>
+						<strong class="display-name css-truncate-target">
+                            {% if email %}
+                                {{ email }}
+                            {% endif %}
+                        </strong>
 					</li>
 					<li class="dropdown-divider"></li>
 					<li class="dropdown-item"><a href="{{ urls['url_subscribe'] }}"><small>New subscription</small></a></li>
@@ -34,7 +37,7 @@
 					<li class="dropdown-divider"></li>
 					<li class="dropdown-item"><a href="#"><small>Report a problem</small></a></li>
 					<li class="dropdown-item"><a href="{{ urls['url_profile'] }}"><small>Settings</small></a></li>
-					<li class="dropdown-item"><a href="#"><small>Log out</small></a></li>
+					<li class="dropdown-item"><a href="{{ url_for('logout') }}"><small>Log out</small></a></li>
 				</ul>
 			</div>
 		</div>
@@ -45,7 +48,7 @@
 				<div class="card">
 					<span class="card-header" style="font-weight: 600;">Your account</span>
 					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><a href="{{ urls['url_profile'] }}"><small class="nav-styled"">View profile</small></a></li>
+						<li class="list-group-item"><a href="{{ urls['url_profile'] }}"><small class="nav-styled">View profile</small></a></li>
 						<li class="list-group-item active"><a href="{{ urls['url_subscribe'] }}" class="active"><small class="nav-styled">Add new subscription</small></a></li>
 						<li class="list-group-item"><a href="#"><small class="nav-styled">Manage active subscriptions</small></a></li>
 						<li class="list-group-item"><a href="#"><small class="nav-styled">Billing options</small></a></li>
@@ -56,52 +59,52 @@
 					</ul></div>
 			</div>
 			<div class="col-md-9 content">
-				<p class="bill">Billing overview</p>
+				<p class="bill">Subscription overview</p>
 				<hr>
 				<div class="row ">
 					<div class="col-md-3 rows">Plan</div>
 					<div class="col-md-5">
-						student pack
+						Student pack
 					</div>
-					<div class="col-md-4"><span class="btn btn-success but">select other plans</span></div>
+					<div class="col-md-4"><span class="btn btn-success but">Select other plans</span></div>
 				</div>
 				<hr>
 				<div class="row ">
-					<div class="col-md-3 rows">payment</div>
+					<div class="col-md-3 rows">Payment</div>
 					<div class="col-md-5">
-						<b> $150 </b><a href="#" class="space">check for other bundles</a>
+						<b> $150 </b><a href="#" class="space">Check for other bundles</a>
 					</div>
 					<div class="col-md-4"><span class="btn btn-light but">Purchase more</span></div>
 				</div>
 				<hr>
 				<div class="row ">
-					<div class="col-md-3 rows">price</div>
+					<div class="col-md-3 rows">Price</div>
 					<div class="col-md-5">
-						<p class="fa fa-credit-card"><span class="space">no payment selected yet</span></p>
+						<p class="fa fa-credit-card"><span class="space">No payment selected yet</span></p>
 					</div>
-					<div class="col-md-4"><div class="btn btn-light  fa fa-credit-card"><span class="space">add payment method</span></div></div>
+					<div class="col-md-4"><div class="btn btn-light  fa fa-credit-card"><span class="space">Add payment method</span></div></div>
 				</div>
 				<hr>
 				<div class="row ">
-					<div class="col-md-3 rows">redeem </div>
+					<div class="col-md-3 rows">Redeem </div>
 					<div class="col-md-5">
-						<p class="fa "><span >you dont have a active subscripion</span></p>
+						<p class="fa "><span >You dont have an active subscripion</span></p>
 					</div>
-					<div class="col-md-4"><div class="btn btn-light  fa fa-gift"><span class="space">redeem subscription</span></div></div>
+					<div class="col-md-4"><div class="btn btn-light  fa fa-gift"><span class="space">Redeem subscription</span></div></div>
 				</div>
 				<hr>
 				<div class="row ">
-					<div class="col-md-3  rows">Add info <i class="fa fa-question-circle"></i></div>
+					<div class="col-md-3 rows">Add info <i class="fa fa-question-circle"></i></div>
 					<div class="col-md-5">
-						<p ><span >please add information for receipt</span></p>
+						<p ><span >Please add information for receipt</span></p>
 					</div>
-					<div class="col-md-4"><div class="btn btn-light  fa fa-pencil"><span class="space">add information</span></div></div>
+					<div class="col-md-4"><div class="btn btn-light  fa fa-pencil"><span class="space">Add information</span></div></div>
 				</div>
 				<hr>
 				<div class="row ">
-					<div class="col-md-3  rows" >Groups </div>
+					<div class="col-md-3 rows" >Groups </div>
 					<div class="col-md-5">
-						<p class="fa fa-close red"><span class="space red" >you do not belong to any subscribed group</span></p>
+						<p class="fa fa-close red"><span class="space red" >You do not belong to any subscribed group</span></p>
 					</div>
 				</div>
 				<hr>

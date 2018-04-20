@@ -8,13 +8,13 @@
 	<link rel="stylesheet" href="../static/css/main.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>View My profile</title>
+	<title>My profile | Hub 2-four-7</title>
 </head>
 <body>
 	<div id="profile-navs" class="fixed-top">
 		<div id="nava">
-			<span><a href="{{ url_for("index") }}"><img src="../static/img/logo.png"></a></span>
-			<big><a href="{{ url_for("index") }}">HUB 2FOUR7</a></big>
+			<span><a href="{{ url_for('index') }}"><img src="../static/img/logo.png"></a></span>
+			<big ><a href="{{ url_for('index') }}">Hub 2-four-7</a></big>
 		</div>
 		<div id="navb">
 			<div class="dropdown">
@@ -26,10 +26,9 @@
 					<li class="dropdown-header css-truncate">
 						Signed in as<br>
 						<strong class="display-name css-truncate-target">
-                            {% in email %}
+                            {% if email %}
                                 {{ email }}
                             {% endif %}
-
                         </strong>
 					</li>
 					<li class="dropdown-divider"></li>
@@ -37,8 +36,8 @@
 					<li class="dropdown-item"><a href="{{ urls['url_profile'] }}"><small>Edit profile</small></a></li>
 					<li class="dropdown-divider"></li>
 					<li class="dropdown-item"><a href="#"><small>Report a problem</small></a></li>
-					<li class="dropdown-item"><a href="{{ urls['url_profild'] }}"><small>Settings</small></a></li>
-					<li class="dropdown-item"><a href="#"><small>Log out</small></a></li>
+					<li class="dropdown-item"><a href="{{ urls['url_profile'] }}"><small>Settings</small></a></li>
+					<li class="dropdown-item"><a href="{{ url_for('logout') }}"><small>Log out</small></a></li>
 				</ul>
 			</div>
 		</div>
@@ -49,8 +48,8 @@
 				<div class="card">
 					<span class="card-header" style="font-weight: 600;">Your account</span>
 					<ul class="list-group list-group-flush">
-						<li class="list-group-item active"><a href="{{ urls['url_profile'] }}" class="active"><small class="nav-styled"">View profile</small></a></li>
-						<li class="list-group-item"><a href="{{ urls['url_subscribe'] }}"><small class="nav-styled">Add new subscription</small></a></li>
+						<li class="list-group-item"><a href="{{ urls['url_profile'] }}"><small class="nav-styled">View profile</small></a></li>
+						<li class="list-group-item active"><a href="{{ urls['url_subscribe'] }}" class="active"><small class="nav-styled">Add new subscription</small></a></li>
 						<li class="list-group-item"><a href="#"><small class="nav-styled">Manage active subscriptions</small></a></li>
 						<li class="list-group-item"><a href="#"><small class="nav-styled">Billing options</small></a></li>
 						<li class="list-group-item"><a href="#"><small class="nav-styled"> </small></a></li>
@@ -81,7 +80,11 @@
 				<div class="row ">
 					<div class="col-md-4 rows">Account Email</div>
 					<div class="col-md-5">
-						eri.doteggbuns@ojipadala.com
+						{% if email %}
+                            {{ email }}
+                        {% else %}
+                        	EriDotEggbuns@ojipadala.com
+                        {% endif %}
 					</div>
 					<div class="col-md-3"><span class="btn btn-light but">Edit</span></div>
 				</div>
@@ -91,7 +94,7 @@
 					<div class="col-md-5">
 						<a href="#" class="space">None</a>
 					</div>
-					<div class="col-md-3"><span class="btn btn-light but">Subscribe now</span></div>
+					<div class="col-md-3"><span class="btn btn-light but"><a href="{{ urls['url_subscribe'] }}">Subscribe now</a></span></div>
 				</div>
 				<hr>
 			</div>

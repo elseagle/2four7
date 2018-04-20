@@ -6,13 +6,13 @@
     <link rel="stylesheet" type="text/css" href="../static/css/tweaks.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=devide-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Sign In | Hub 2-four-7</title>
 </head>
 <body>
 <div>
     <nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
-        <span><img src="../static/img/logo.png"></span>
-        <a class="navbar-brand mr-auto" href="#">2-four-7</a>
+        <span><a href="{{ url_for('index') }}"><img src="../static/img/logo.png"></a></span>
+        <a class="navbar-brand mr-auto" href="{{ url_for('index') }}">2-four-7</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navToggler"
                 aria-controls="navToggler" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,17 +22,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ urls['url_index'] }}#get-started">Get started <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item ">
-						<a class="nav-link" href="{{ url_for("user_dashboard") }}">My profile</a>
-					</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ urls['url_index'] }}#users-plans">Users' Plans</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ urls['url_index'] }}#users-comment">Users' Comments</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ urls['url_index'] }}#settings">Settings</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ urls['url_index'] }}#go-get-it">Get it now!</a>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ url_for('user_dashboard') }}">My profile</a>
                 </li>
             </ul>
         </div>
@@ -40,7 +37,7 @@
 </div>
 <div class="row">
     <div class="col-md-6" style="margin: auto;">
-        <form class="form-signin" method="POST" action="{{ url_for("login") }}">
+        <form class="form-signin" method="POST" action="{{ url_for('login') }}">
             <div class="text-center mb-4">
                 <img class="mb-4" src="../static/img/logo.png" alt="" width="72" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
@@ -80,12 +77,12 @@
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-center">New HUB 2FOUR7? <a class="toggleVisibility" href="#"> Sign Up</a> now
+            <p class="mt-5 mb-3 text-center">New to Hub 2-four-7? <a class="toggleVisibility" href="#"> Sign Up</a> now
             </p>
             <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
         </form>
 
-        <form class="form-signup no-display" action="{{ url_for("signup") }}" method="POST">
+        <form class="form-signup no-display" action="{{ url_for('signup') }}" method="POST">
             <div class="text-center mb-4">
                 <img class="mb-4" src="../static/img/logo.png" alt="" width="72" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
@@ -136,7 +133,7 @@
                     conditions</a></small>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
-            <p class="mt-5 mb-3 text-center">Not new to 2-four-7 Hub? <a class="toggleVisibility" href="#"> Sign In</a>
+            <p class="mt-5 mb-3 text-center">Not new to Hub 2-four-7? <a class="toggleVisibility" href="#"> Sign In</a>
                 now</p>
             <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
         </form>
