@@ -35,7 +35,7 @@ def index():
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     if session.get('email'):
-        logged_in = "You are already logged in"
+        logged_in = 'You are already logged in. Go to "Dashboard"'
         return render_template("login.html", logged_in=logged_in, urls=url_dict)
     form = LoginForm(request.form)
     if request.method == 'POST':
@@ -47,7 +47,7 @@ def login():
             return render_template('login.html', not_exist=not_exist, urls=url_dict)
         session['email'] = email
         login = "You are now logged in."
-        return render_template("profile.html", login=login, urls=url_dict)
+        return render_template("profile.html", login=login, urls=url_dict, email=email)
     if form.errors:
         not_login = "Something isn't right, please reload page and try again"
         return render_template("login.html", not_login=not_login, urls=url_dict)

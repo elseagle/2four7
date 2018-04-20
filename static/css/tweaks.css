@@ -9,8 +9,7 @@ body {
 nav img {
 	height: inherit;
 	width: 40px;
-}
-
+}
 
 
 
@@ -93,7 +92,7 @@ h2.h-custom-headline {
 }
 .pll, .phl, .pal {
 	padding-left: 2em !important;
-	padding-left: 2em !important;
+	padding-right: 2em !important;
 }
 .x-section .x-container.marginless-columns::before, .x-section .x-container.marginless-columns::after {
 	display: none;

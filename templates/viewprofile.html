@@ -28,6 +28,8 @@
 						<strong class="display-name css-truncate-target">
                             {% if email %}
                                 {{ email }}
+                            {% else %}
+                            @elseagle
                             {% endif %}
                         </strong>
 					</li>
@@ -48,8 +50,8 @@
 				<div class="card">
 					<span class="card-header" style="font-weight: 600;">Your account</span>
 					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><a href="{{ urls['url_profile'] }}"><small class="nav-styled">View profile</small></a></li>
-						<li class="list-group-item active"><a href="{{ urls['url_subscribe'] }}" class="active"><small class="nav-styled">Add new subscription</small></a></li>
+						<li class="list-group-item active"><a href="{{ urls['url_profile'] }}" class="active"><small class="nav-styled">View profile</small></a></li>
+						<li class="list-group-item"><a href="{{ urls['url_subscribe'] }}"><small class="nav-styled">Add new subscription</small></a></li>
 						<li class="list-group-item"><a href="#"><small class="nav-styled">Manage active subscriptions</small></a></li>
 						<li class="list-group-item"><a href="#"><small class="nav-styled">Billing options</small></a></li>
 						<li class="list-group-item"><a href="#"><small class="nav-styled"> </small></a></li>
